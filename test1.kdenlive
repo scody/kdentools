@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt title="Anonymous Submission" version="0.9.3" root="/home/steve" LC_NUMERIC="en_US.UTF-8">
+ <profile width="1920" display_aspect_den="9" colorspace="709" frame_rate_den="1001" description="HD 1080p 23.98 fps" height="1080" display_aspect_num="16" frame_rate_num="24000" progressive="1" sample_aspect_num="1" sample_aspect_den="1"/>
+ <producer in="0" out="500" id="black">
+  <property name="mlt_type">producer</property>
+  <property name="length">15000</property>
+  <property name="eof">pause</property>
+  <property name="resource">black</property>
+  <property name="aspect_ratio">0</property>
+  <property name="mlt_service">colour</property>
+ </producer>
+ <playlist id="black_track">
+  <entry in="0" out="5068" producer="black"/>
+ </playlist>
+ <playlist id="playlist1"/>
+ <playlist id="playlist2"/>
+ <playlist id="playlist3">
+  <filter id="LetterBox300">
+   <property name="track">0</property>
+   <property name="version">0.1</property>
+   <property name="mlt_type">filter</property>
+   <property name="mlt_service">frei0r.letterb0xed</property>
+   <property name="kdenlive_id">LetterBox300</property>
+   <property name="tag">frei0r.letterb0xed</property>
+   <property name="kdenlive_ix">1</property>
+   <property name="kdenlive_info"/>
+   <property name="Border Width">0.3</property>
+   <property name="Transparency">0</property>
+  </filter>
+ </playlist>
+ <producer in="0" out="5006" id="1_1">
+  <property name="mlt_type">producer</property>
+  <property name="length">5007</property>
+  <property name="eof">pause</property>
+  <property name="resource">/media/steve/Extra Drive 1/videos/DSA2015Winter2/DSC_0030.MOV</property>
+  <property name="meta.media.nb_streams">2</property>
+  <property name="meta.media.0.stream.type">video</property>
+  <property name="meta.media.0.stream.frame_rate">23.976</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
+  <property name="meta.media.0.codec.frame_rate">23.976</property>
+  <property name="meta.media.0.codec.pix_fmt">yuvj420p</property>
+  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.colorspace">601</property>
+  <property name="meta.media.0.codec.color_trc">4</property>
+  <property name="meta.media.0.codec.name">h264</property>
+  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+  <property name="meta.media.0.codec.bit_rate">21464432</property>
+  <property name="meta.attr.0.stream.creation_time.markup">2015-12-04 20:40:22</property>
+  <property name="meta.attr.0.stream.language.markup">eng</property>
+  <property name="meta.media.1.stream.type">audio</property>
+  <property name="meta.media.1.codec.sample_fmt">s16</property>
+  <property name="meta.media.1.codec.sample_rate">48000</property>
+  <property name="meta.media.1.codec.channels">2</property>
+  <property name="meta.media.1.codec.name">pcm_s16le</property>
+  <property name="meta.media.1.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.1.codec.bit_rate">1536000</property>
+  <property name="meta.attr.1.stream.creation_time.markup">2015-12-04 20:40:22</property>
+  <property name="meta.attr.1.stream.language.markup">eng</property>
+  <property name="meta.attr.major_brand.markup">qt  </property>
+  <property name="meta.attr.minor_version.markup">537331968</property>
+  <property name="meta.attr.compatible_brands.markup">qt  niko</property>
+  <property name="meta.attr.creation_time.markup">2015-12-04 20:40:22</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.sample_aspect_num">1</property>
+  <property name="meta.media.sample_aspect_den">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="audio_index">1</property>
+  <property name="video_index">0</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.frame_rate_num">24000</property>
+  <property name="meta.media.frame_rate_den">1001</property>
+  <property name="meta.media.colorspace">601</property>
+  <property name="meta.media.color_trc">4</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="meta.media.top_field_first">0</property>
+  <property name="meta.media.progressive">1</property>
+ </producer>
+ <playlist id="playlist4">
+  <blank length="62"/>
+  <entry in="0" out="2053" producer="1_1"/>
+  <blank length="370"/>
+  <entry in="2424" out="5006" producer="1_1"/>
+  <filter id="filter0">
+   <property name="track">0</property>
+   <property name="version">0.1</property>
+   <property name="mlt_type">filter</property>
+   <property name="mlt_service">frei0r.letterb0xed</property>
+   <property name="kdenlive_id">LetterBox300</property>
+   <property name="tag">frei0r.letterb0xed</property>
+   <property name="kdenlive_ix">1</property>
+   <property name="kdenlive_info"/>
+   <property name="Border Width">0.3</property>
+   <property name="Transparency">0</property>
+  </filter>
+ </playlist>
+ <playlist id="playlist5"/>
+ <tractor title="Anonymous Submission" global_feed="1" in="0" out="5068" id="maintractor">
+  <property name="meta.volume">1</property>
+  <track producer="black_track"/>
+  <track hide="video" producer="playlist1"/>
+  <track hide="video" producer="playlist2"/>
+  <track producer="playlist3"/>
+  <track hide="audio" producer="playlist4"/>
+  <track producer="playlist5"/>
+  <transition id="transition0">
+   <property name="a_track">1</property>
+   <property name="b_track">2</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition1">
+   <property name="a_track">1</property>
+   <property name="b_track">3</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition2">
+   <property name="a_track">1</property>
+   <property name="b_track">4</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition3">
+   <property name="a_track">1</property>
+   <property name="b_track">5</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+ </tractor>
+ <kdenlivedoc profile="atsc_1080p_2398" kdenliveversion="0.9.10" version="0.88" projectfolder="/home/steve/kdenlive">
+  <customeffects>
+   <effectgroup type="custom" id="DSAColors" name="DSAColors">
+    <effect version="0.3" tag="frei0r.curves" kdenlive_info="0/-1/DSAColors" LC_NUMERIC="C" id="frei0r.curves">
+     <name>Curves</name>
+     <description>Color curves adjustment</description>
+     <author>Maksim Golovkin</author>
+     <parameter default="0" type="list" value="3" name="Channel" paramlist="0;1;2;3">
+      <paramlistdisplay>Red,Green,Blue,Luma</paramlistdisplay>
+      <name>Channel</name>
+     </parameter>
+     <parameter default="1" type="list" value="1" name="Luma formula" paramlist="0;1">
+      <paramlistdisplay>Rec. 601,Rec. 709</paramlistdisplay>
+      <name>Luma formula</name>
+     </parameter>
+     <!-- No actual parameter: Represents the curve widget -->
+     <parameter default="0" inpoints="Point %i input value" depends="Channel" number="Curve point number" type="curve" value="0" min="1" max="5" outpoints="Point %i output value"/>
+     <parameter default="0.2" type="fixed" value="0.5" min="0.2" name="Curve point number" max="0.5">
+      <name>Number of curve points</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0" min="0" name="Point 1 input value" max="1">
+      <name>Point 1 input value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0" min="0" name="Point 1 output value" max="1">
+      <name>Point 1 output value</name>
+     </parameter>
+     <parameter default="1" type="fixed" value="0.230045" min="0" name="Point 2 input value" max="1">
+      <name>Point 2 input value</name>
+     </parameter>
+     <parameter default="1" type="fixed" value="0.176542" min="0" name="Point 2 output value" max="1">
+      <name>Point 2 output value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0.52786" min="0" name="Point 3 input value" max="1">
+      <name>Point 3 input value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0.536913" min="0" name="Point 3 output value" max="1">
+      <name>Point 3 output value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0.780198" min="0" name="Point 4 input value" max="1">
+      <name>Point 4 input value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="0.808638" min="0" name="Point 4 output value" max="1">
+      <name>Point 4 output value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="1" min="0" name="Point 5 input value" max="1">
+      <name>Point 5 input value</name>
+     </parameter>
+     <parameter default="0" type="fixed" value="1" min="0" name="Point 5 output value" max="1">
+      <name>Point 5 output value</name>
+     </parameter>
+     <parameter default="0" type="bool" value="0" name="Show curves">
+      <name>Show graph in picture</name>
+     </parameter>
+     <parameter default="0.3" type="list" value="0.3" name="Graph position" paramlist="0;0.1;0.2;0.3">
+      <paramlistdisplay>Top Left,Top Right,Bottom Left,Bottom Right</paramlistdisplay>
+      <name>Graph position</name>
+     </parameter>
+     <version>0.3</version>
+     <version>0.3</version>
+    </effect>
+   </effectgroup>
+  </customeffects>
+  <documentproperties proxyimageminsize="2000" zonein="0" enableproxy="0" zoneout="100" generateproxy="0" zoom="7" verticalzoom="1" proxyextension="ts" position="0" documentid="1449342337277" generateimageproxy="0" proxyminsize="1000" proxyparams="-f mpegts -acodec libmp3lame -ac 2 -ab 128k -ar 48000 -vcodec mpeg2video -g 5 -deinterlace -s 640x360 -vb 700k"/>
+  <documentmetadata/>
+  <documentnotes>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>&lt;/body>&lt;/html></documentnotes>
+  <profileinfo width="1920" display_aspect_den="9" frame_rate_den="1001" description="HD 1080p 23.98 fps" height="1080" frame_rate_num="24000" display_aspect_num="16" progressive="1" sample_aspect_num="1" sample_aspect_den="1"/>
+  <tracksinfo>
+   <trackinfo blind="1" mute="0" locked="0" trackname="Audio 2" type="audio"/>
+   <trackinfo blind="1" mute="0" locked="0" trackname="Audio 1" type="audio"/>
+   <trackinfo blind="0" mute="0" locked="0" trackname="Video 3"/>
+   <trackinfo blind="0" mute="1" locked="0" trackname="Video 2"/>
+   <trackinfo blind="0" mute="0" locked="0" trackname="Video 1"/>
+  </tracksinfo>
+  <kdenlive_producer audio_max="63" id="1" pix_fmt="yuvj420p" default_video="0" fps="23.976" analysisdata="" name="DSC_0030.MOV" videocodecid="h264" colorspace="601" videocodec="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" resource="/media/steve/Extra Drive 1/videos/DSA2015Winter2/DSC_0030.MOV" default_audio="1" audiocodec="PCM signed 16-bit little-endian" duration="5007" file_hash="15cbd595b0899c98c5ebbcf3e9e4d07a" aspect_ratio="1" channels="2" frequency="48000" video_max="0" progressive="1" type="3" frame_size="1920x1080" file_size="600827231">
+   <metaproperty tool="" name="meta.attr.0.stream.creation_time">2015-12-04 20:40:22</metaproperty>
+   <metaproperty tool="" name="meta.attr.0.stream.language">eng</metaproperty>
+   <metaproperty tool="" name="meta.attr.1.stream.creation_time">2015-12-04 20:40:22</metaproperty>
+   <metaproperty tool="" name="meta.attr.1.stream.language">eng</metaproperty>
+   <metaproperty tool="" name="meta.attr.compatible_brands">qt  niko</metaproperty>
+   <metaproperty tool="" name="meta.attr.creation_time">2015-12-04 20:40:22</metaproperty>
+   <metaproperty tool="" name="meta.attr.major_brand">qt  </metaproperty>
+   <metaproperty tool="" name="meta.attr.minor_version">537331968</metaproperty>
+  </kdenlive_producer>
+  <kdenlive_producer audio_max="63" id="2" pix_fmt="yuvj420p" default_video="0" fps="23.976" analysisdata="" name="DSC_8481.MOV" videocodecid="h264" colorspace="601" videocodec="H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10" resource="/media/steve/Extra Drive 1/videos/DSA2015Winter2/DSC_8481.MOV" default_audio="1" audiocodec="PCM signed 16-bit little-endian" duration="5016" file_hash="f3193013a957b077d5aed56f744b34bd" aspect_ratio="1" channels="2" frequency="48000" video_max="0" progressive="1" type="3" frame_size="1920x1080" file_size="601794494">
+   <metaproperty tool="" name="meta.attr.0.stream.creation_time">2015-12-04 20:39:56</metaproperty>
+   <metaproperty tool="" name="meta.attr.0.stream.language">eng</metaproperty>
+   <metaproperty tool="" name="meta.attr.1.stream.creation_time">2015-12-04 20:39:56</metaproperty>
+   <metaproperty tool="" name="meta.attr.1.stream.language">eng</metaproperty>
+   <metaproperty tool="" name="meta.attr.compatible_brands">qt  niko</metaproperty>
+   <metaproperty tool="" name="meta.attr.creation_time">2015-12-04 20:39:56</metaproperty>
+   <metaproperty tool="" name="meta.attr.major_brand">qt  </metaproperty>
+   <metaproperty tool="" name="meta.attr.minor_version">537331968</metaproperty>
+  </kdenlive_producer>
+  <markers/>
+  <groups/>
+ </kdenlivedoc>
+</mlt>
